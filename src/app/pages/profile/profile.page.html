@@ -6,26 +6,26 @@
   <div class="profile-header">
     <h3 class="profile-nombre">{{datosPerfil?.name}}</h3>
     <div class="profile-info">
-      <span class="profile-badge">Varón</span>
-      <span class="profile-badge">22 años</span>
-      <span class="profile-badge">Definición</span>
+      <span class="profile-badge">{{datosPerfil?.gender}}</span>
+      <span class="profile-badge">{{datosPerfil?.age}} años</span>
+      <span class="profile-badge">{{datosPerfil?.goal}}</span>
     </div>
   </div>
 
   <div class="datos-fisicos">
     <div class="dato-item">
       <span class="dato-titulo">Altura</span>
-      <span class="dato-valor">178 cm</span>
+      <span class="dato-valor">{{datosPerfil?.heightCm}} cm</span>
     </div>
     <div class="separador"></div>
     <div class="dato-item">
       <span class="dato-titulo">Peso</span>
-      <span class="dato-valor">70 kg</span>
+      <span class="dato-valor">{{datosPerfil?.weightKg}} kg</span>
     </div>
     <div class="separador"></div>
     <div class="dato-item">
       <span class="dato-titulo">% Grasa</span>
-      <span class="dato-valor">17%</span>
+      <span class="dato-valor">{{datosPerfil?.fatPercent}}%</span>
     </div>
   </div>
 
@@ -46,18 +46,18 @@
     <h4 class="subtitulo">Estadísticas en base a tus atributos</h4>
     <div class="estadistica-item">
       <span class="estadistica-titulo">IMC</span>
-      <span class="estadistica-valor">22.1</span>
+      <span class="estadistica-valor">{{datosPerfil?.imc}}</span>
     </div>
     <div class="separador"></div>
     <div class="estadistica-item">
       <span class="estadistica-titulo">Masa Muscular</span>
-      <span class="estadistica-valor">35 kg</span>
+      <span class="estadistica-valor">{{datosPerfil?.muscleMass}} kg</span>
     </div>
 
     <div class="separador"></div>
     <div class="estadistica-item">
       <span class="estadistica-titulo">Masa Grasa</span>
-      <span class="estadistica-valor">12 kg</span>
+      <span class="estadistica-valor">{{datosPerfil?.fatMass}} kg</span>
     </div></div>
   <div id="botones">
   <ion-button class="boton-editar" color="primary"><span>Marcar Objetivo</span></ion-button>

@@ -3,7 +3,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { search, menuOutline, home, add, heart, person, information} from 'ionicons/icons';
+import { search, menuOutline, home, add, heart, person, information, arrowBack} from 'ionicons/icons';
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
@@ -16,7 +16,8 @@ addIcons({
   'add': add,
   'heart': heart,
   'person': person,
-  'info': information
+  'info': information,
+  'arrow-back': arrowBack
 });
 
 bootstrapApplication(AppComponent, {

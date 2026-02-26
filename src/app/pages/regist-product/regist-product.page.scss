@@ -1,0 +1,86 @@
+ion-content {
+  --background: #0a0e27;
+  --padding-bottom: 0px;
+}
+
+ion-toolbar {
+  --background: #0f1e35;
+  --color: #ffffff;
+}
+.back-btn ion-icon {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+ion-toolbar {
+  --min-height: 56px;
+}
+ion-title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Estilo general de los ion-item */
+ion-item {
+  --background: linear-gradient(135deg, #1a2f4a 0%, #0f1e35 100%);
+  --border-radius: 12px;
+  --border-color: #4a7ba7;
+  --border-style: solid;
+  --border-width: 1px;
+  --padding-start: 12px;
+  --padding-end: 10px;
+
+  border-radius: 12px;
+  margin-bottom: -2px;
+  box-shadow: 0 2px 12px rgba(74, 123, 167, 0.15);
+}
+
+/* Labels */
+ion-label {
+  color: #b0b0b0 !important;
+  font-weight: 600;
+  font-size: 13px;
+
+  letter-spacing: 0.4px;
+}
+
+/* Inputs */
+ion-input {
+  --color: #ffffff;
+  --placeholder-color: rgba(176, 176, 176, 0.5);
+  font-weight: 500;
+}
+
+/* Cuando el input está enfocado */
+ion-item.item-has-focus {
+  --border-color: #6fa3d1;
+  box-shadow: 0 0 8px rgba(111, 163, 209, 0.4);
+}
+
+/* Asterisco obligatorio */
+ion-label span {
+  color: #ff4444;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  ion-item {
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+
+  ion-label {
+    font-size: 11px;
+  }
+}
