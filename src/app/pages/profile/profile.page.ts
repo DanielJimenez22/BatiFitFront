@@ -24,7 +24,12 @@ export class ProfilePage {
 
   ngOnInit()
   {
-    //Cargar datos del usuario
+    this.loadUserInfo();
+
+  }
+  loadUserInfo()
+  {
+        //Cargar datos del usuario
     this.profileService.getUserInfo().subscribe({
       next: (data) => {
         this.datosPerfil = data;
@@ -33,22 +38,20 @@ export class ProfilePage {
         console.error('Error al cargar los datos del perfil:', err);
       }
     })
-
   }
 
-
-  personalAttributes: PersonalAtributes | null = null;
 
   get porcentajeCalorias(): number {
     return ((this.currentCalorias - this.minCalorias) / (this.maxCalorias - this.minCalorias)) * 100;
   }
 
 
+  //Forma de crear un componente y enviarle datos por Input (component props)
   async openEditModal() {
     const modal = await this.modalController.create({
       component: PersonalFormComponent,
       componentProps: {
-        initialData: this.personalAttributes,
+        initialData: this.datosPerfil,
       },
       cssClass: 'modal-custom',
       mode: 'ios',
@@ -58,8 +61,10 @@ export class ProfilePage {
 
     const { data } = await modal.onDidDismiss();
     if (data) {
-      this.personalAttributes = data;
-      console.log('Datos actualizados:', this.personalAttributes);
+      this.datosPerfil = data;
+      this.loadUserInfo();
+      console.log('Datos actualizados:', this.datosPerfil);
     }
+
   }
 }
